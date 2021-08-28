@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Departamento;
+use App\Models\Documento;
 use Illuminate\Http\Request;
 
-class DepartamentoController extends Controller
+class DocumentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::all();
-        return View('departamento.index')->with('nomeVarView',$departamentos);
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        return View('departamento.create');
+        //
     }
 
     /**
@@ -36,32 +35,16 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //var_dump(   $request->all()   );
-
-        $this->validate($request,
-        [
-            'nome' => 'required|max:50',
-            'sigla' => 'required|max:3' 
-        ],
-        [
-            'nome.required' => 'Nome é obrigatório',
-            'nome.max' => 'Nome máximo 50',
-            'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
-        ]);
-
-        Departamento::create( $request->all() );
-
-        return redirect("/departamento");
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Departamento  $departamento
+     * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function show(Departamento $departamento)
+    public function show(Documento $documento)
     {
         //
     }
@@ -69,10 +52,10 @@ class DepartamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Departamento  $departamento
+     * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Departamento $departamento)
+    public function edit(Documento $documento)
     {
         //
     }
@@ -81,10 +64,10 @@ class DepartamentoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Departamento  $departamento
+     * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Departamento $departamento)
+    public function update(Request $request, Documento $documento)
     {
         //
     }
@@ -92,10 +75,10 @@ class DepartamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Departamento  $departamento
+     * @param  \App\Models\Documento  $documento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Departamento $departamento)
+    public function destroy(Documento $documento)
     {
         //
     }

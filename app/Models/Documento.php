@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Departamento extends Model
+class Documento extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome','sigla'];
+    protected $fillable = ['titulo','nomeOriginal','nomeInterno','funcionario_id'];
+
 }
