@@ -14,7 +14,7 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::all();
+        $departamentos = Departamento::paginate(2); //Departamento::all();
         return View('departamento.index')->with('nomeVarView',$departamentos);
     }
 
