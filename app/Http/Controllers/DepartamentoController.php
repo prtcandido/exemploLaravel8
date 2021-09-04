@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Departamento;
 use Illuminate\Http\Request;
+use App\Http\Requests\DepartamentoRequest;
 
 class DepartamentoController extends Controller
 {
@@ -34,36 +35,25 @@ class DepartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartamentoRequest $request)
     {
         //var_dump(   $request->all()   );
 
-        $this->validate($request,
-        [
-            'nome' => 'required|max:50',
-            'sigla' => 'required|max:3' 
-        ],
-        [
-            'nome.required' => 'Nome é obrigatório',
-            'nome.max' => 'Nome máximo 50',
-            'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
-        ]);
+        // $this->validate($request,
+        // [
+        //     'nome' => 'required|max:50',
+        //     'sigla' => 'required|max:3' 
+        // ],
+        // [
+        //     'nome.required' => 'Nome é obrigatório',
+        //     'nome.max' => 'Nome máximo 50',
+        //     'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
+        // ]);
 
         Departamento::create( $request->all() );
 
         return redirect("/departamento");
 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Departamento $departamento)
-    {
-        //
     }
 
     /**
@@ -74,7 +64,7 @@ class DepartamentoController extends Controller
      */
     public function edit(Departamento $departamento)
     {
-        //
+        return View('departamento.edit')->with('dep',$departamento);
     }
 
     /**
@@ -84,9 +74,33 @@ class DepartamentoController extends Controller
      * @param  \App\Models\Departamento  $departamento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Departamento $departamento)
+    public function update(DepartamentoRequest $request, Departamento $departamento)
     {
-        //
+        // $this->validate($request,
+        // [
+        //     'nome' => 'required|max:50',
+        //     'sigla' => 'required|max:3' 
+        // ],
+        // [
+        //     'nome.required' => 'Nome é obrigatório',
+        //     'nome.max' => 'Nome máximo 50',
+        //     'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
+        // ]);
+
+        $departamento->update(  $request->all()  );
+
+        return redirect('/departamento');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Departamento  $departamento
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Departamento $departamento)
+    {
+        return View('departamento.show')->with('dep',$departamento);
     }
 
     /**
@@ -97,6 +111,8 @@ class DepartamentoController extends Controller
      */
     public function destroy(Departamento $departamento)
     {
-        //
+        $departamento->delete();
+
+        return redirect('/departamento');
     }
 }

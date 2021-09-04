@@ -15,7 +15,7 @@
 	<td>{{ $d->nome }}</td>
 	<td>{{ $d->sigla }}</td>
 	<td>
-		<a href="/departamento/{{$d->id}}" class="btn btn-primary btn-sm">Detalhe</a>
+		<a href="/departamento/{{$d->id}}" class="btn btn-primary btn-sm">Excluir</a>
 		<a href="/departamento/{{$d->id}}/edit" class="btn btn-primary btn-sm">Editar</a>
 	</td>
 </tr> 
