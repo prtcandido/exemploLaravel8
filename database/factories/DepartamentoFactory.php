@@ -22,7 +22,8 @@ class DepartamentoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->name()
+            'nome' => $this->faker->name(),
+            'sigla' => 'XX',
         ];
     }
 }
