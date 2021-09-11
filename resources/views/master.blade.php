@@ -34,14 +34,14 @@
 				<div class="sidebar-sticky">
 					<ul class="nav flex-column">
 						<li class="nav-item">
-							<a class="nav-link" href="/" >
+							<a class=" @yield('principal') " href="/" >
 							<span data-feather="home"></span>
 							Principal
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="/departamento">
-							<span data-feather="file"></span>
+							<a class=" @yield('departamento') " href="/departamento">
+							<span data-feather="layout"></span>
 							Departamentos
 							</a>
 						</li>

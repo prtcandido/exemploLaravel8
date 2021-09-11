@@ -7,7 +7,7 @@
 	<h1 class="h2">Departamentos</h1>
 	<div class="btn-toolbar mb-2 mb-md-0">
 		<div class="btn-group mr-2">
-			<a href="/departamento/create" class="btn btn-sm btn-outline-secondary">Novo</a>
+			<a href="/departamento/create" class="btn btn-sm btn-outline-primary">Novo</a>
 		</div>
 	</div>
 </div>
@@ -26,8 +26,8 @@
 	<td>{{ $d->sigla }}</td>
 	<td>{{ $d->centroCusto }}</td>
 	<td>
-		<a href="/departamento/{{$d->id}}" class="btn btn-primary btn-sm">Excluir</a>
-		<a href="/departamento/{{$d->id}}/edit" class="btn btn-primary btn-sm">Editar</a>
+		<a href="/departamento/{{$d->id}}" class="btn btn-danger btn-sm"><span data-feather="x-octagon"></span> Excluir</a>
+		<a href="/departamento/{{$d->id}}/edit" class="btn btn-warning btn-sm"><span data-feather="edit"></span> Editar</a>
 	</td>
 </tr> 
 @endforeach
