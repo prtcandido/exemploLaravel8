@@ -15,7 +15,8 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::paginate(2); //Departamento::all();
+        $departamentos = Departamento::simplePaginate(3)->withPath('/departamento'); //Departamento::all();
+
         return View('departamento.index')->with('nomeVarView',$departamentos);
     }
 
@@ -37,18 +38,8 @@ class DepartamentoController extends Controller
      */
     public function store(DepartamentoRequest $request)
     {
-        //var_dump(   $request->all()   );
-
-        // $this->validate($request,
-        // [
-        //     'nome' => 'required|max:50',
-        //     'sigla' => 'required|max:3' 
-        // ],
-        // [
-        //     'nome.required' => 'Nome é obrigatório',
-        //     'nome.max' => 'Nome máximo 50',
-        //     'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
-        // ]);
+        //verificar o arquivo em Http/Requests/DepartamentoRequest para validações
+        //para criar um Request usar: php artisan make:request
 
         Departamento::create( $request->all() );
 
