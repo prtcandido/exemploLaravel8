@@ -25,7 +25,8 @@ class DepartamentoRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:50',
-            'sigla' => 'required|max:3' 
+            'sigla' => 'required|max:3',
+            'centroCusto' => 'required|max:30'
         ];
     }
 
@@ -34,7 +35,8 @@ class DepartamentoRequest extends FormRequest
         return [
             'nome.required' => 'Nome é obrigatório',
             'nome.max' => 'Nome máximo 50',
-            'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres'
+            'sigla.*' => 'Sigla é obrigatória com no máximo 3 caracteres',
+            'centroCusto.*' => 'Centro Custo é obrigatório com no máximo 30 caractestes',
         ];
     }
 }

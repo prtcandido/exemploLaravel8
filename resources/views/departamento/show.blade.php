@@ -10,6 +10,9 @@
 	<dt>Sigla</dt>
 	<dd>{{$dep->sigla}}</dd>
 
+	<dt>Centro Custo</dt>
+	<dd>{{$dep->centroCusto}}</dd>
+
 	<form action="/departamento/{{$dep->id}}" method="post">
 		@csrf
 		@method('DELETE')

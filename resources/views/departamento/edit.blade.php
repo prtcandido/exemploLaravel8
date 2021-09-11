@@ -24,7 +24,15 @@
                         <p class="text-danger">{{$errors->first('sigla')}}</p>
                         @endif
                     </div>
-                    <input type="submit" value="Criar" class="btn btn-primary btn-sm"/>
+                    <div>
+                        <label for="centroCusto">Centro Custo</label>
+                        <input type="text" name="centroCusto" id="centroCusto" class="form-control" 
+                        value="{{(empty(old('centroCusto')))?$dep->centroCusto:old('centroCusto')}}"/>
+                        @if($errors->has('centroCusto'))
+                        <p class="text-danger">{{$errors->first('centroCusto')}}</p>
+                        @endif
+                    </div>
+                    <input type="submit" value="Alterar" class="btn btn-primary btn-sm"/>
                     <a href="/departamento" class="btn btn-primary btn-sm">Voltar</a>
                 </form>
             </div>

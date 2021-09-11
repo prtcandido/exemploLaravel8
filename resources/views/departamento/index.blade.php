@@ -7,6 +7,7 @@
 <tr>
 	<th>Nome</th>
 	<th>Sigla</th>
+	<th>Centro Custo</th>
 	<th></th>
 </tr>
 <!-- Loop pela coleção de departamentos -->
@@ -14,6 +15,7 @@
 <tr>
 	<td>{{ $d->nome }}</td>
 	<td>{{ $d->sigla }}</td>
+	<td>{{ $d->centroCusto }}</td>
 	<td>
 		<a href="/departamento/{{$d->id}}" class="btn btn-primary btn-sm">Excluir</a>
 		<a href="/departamento/{{$d->id}}/edit" class="btn btn-primary btn-sm">Editar</a>

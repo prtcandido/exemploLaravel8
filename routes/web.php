@@ -15,7 +15,7 @@ use \App\Http\Controllers\DepartamentoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 });
 
 //Route::get('/departamento',[DepartamentoController::class,'index']);
