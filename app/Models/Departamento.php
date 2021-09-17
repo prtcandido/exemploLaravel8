@@ -10,4 +10,8 @@ class Departamento extends Model
     use HasFactory;
 
     protected $fillable = ['nome','sigla','centroCusto'];
+
+    public function funcionarios() {
+    	return $this->hasMany('App\Models\Funcionario');
+    }
 }

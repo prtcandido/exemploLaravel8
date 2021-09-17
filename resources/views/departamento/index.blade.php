@@ -19,6 +19,7 @@
 	<td>
 		<a href="/departamento/{{$d->id}}" class="btn btn-primary btn-sm">Excluir</a>
 		<a href="/departamento/{{$d->id}}/edit" class="btn btn-primary btn-sm">Editar</a>
+		<a href="/funcionario?departamento_id={{$d->id}}" class="btn btn-primary btn-sm">Funcionarios</a>
 	</td>
 </tr> 
 @endforeach

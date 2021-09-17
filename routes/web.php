@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\DepartamentoController;
+use \App\Http\Controllers\FuncionarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,9 @@ Route::get('/', function () {
 //Route::get('/departamento',[DepartamentoController::class,'index']);
 
 Route::resource('departamento',DepartamentoController::class);
+Route::resource('funcionario',FuncionarioController::class);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//--
